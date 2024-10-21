@@ -7,6 +7,7 @@ The data for this project comes from AtliQ Hardware, a company that supplies com
 
 Data MODEl
 Below is the **Star Schema** representation of the data model, created using Power BI. It illustrates the relationships between the **Sales Transactions** fact table and its associated dimension tables(sales customers, sales date,sales market,sales product).
+![starschema](https://github.com/user-attachments/assets/760edbf5-2360-4dcb-8237-81cff33b6570)
 
 This star schema design optimizes the data model for analytical queries such as sales performance, product trends, and market segmentation. The model can be easily extended by adding more dimensions or metrics to the fact table.
 ### 3-Data Analysis using SQL:
