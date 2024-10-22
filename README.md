@@ -53,7 +53,34 @@ and transactions.market_code="Mark001";`
 
 ### 4-PowerBI dashboard:
 
+I developed an interactive Power BI dashboard to provide real-time sales insights for a computer hardware business operating in a dynamic market. The dashboard helps decision-makers monitor key performance indicators such as revenue, sales quantity, customer behavior, and market trends, facilitating timely and informed business decisions.
+![dashboard](https://github.com/user-attachments/assets/5bdcbb0a-ad6a-4571-bef8-b00dac2ad31e)
 
+** Data Preparation and Cleaning:
+To ensure data accuracy and relevance, I performed extensive data cleaning, including the elimination of duplicate and meaningless values. Using formulas like:
 
+** Filtering sales transactions:
 
+Table.SelectRows(sales_transactions, each ([sales_amount] <> -1 and [sales_amount] <> 0))
+Currency conversion:
+
+Table.AddColumn(#"Filtered Rows", "norm_sales_amount", each if [currency] = "USD" then [sales_amount]*75 else [sales_amount])
+This step ensured that only valid and consistent data was used in the analysis.
+
+** Dashboard Features:
+Revenue and Sales Quantity per Market: I added key measures, including:
+
+Revenue:
+
+Revenue = SUM('sales transactions'[sales_amount])
+Sales Quantity:
+
+-Sales Qty = SUM('sales transactions'[sales_qty])
+These metrics are visualized across different markets, allowing users to track performance in specific geographic regions.
+
+-Year and Time Filtering: The dashboard includes a time filter, enabling users to view sales quantity and revenue for specific years and time periods, providing a dynamic and focused view of the data.
+
+-Revenue Trend Graph: A visual representation of revenue trends over time has been added, helping users understand sales performance changes and growth patterns across different periods.
+
+-Top 5 Customers and Products: To highlight key drivers of sales, the dashboard features a ranking of the top 5 customers and top 5 products, offering insights into which customers and products contribute most to the business.
 
